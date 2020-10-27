@@ -66,13 +66,17 @@
 		      <div class="col-md-12">
 			     <div class="tab_menu">
 				    <ul>
-					   <li><a href="#"><span class="icon"><img src="<?= base_url('assets') ;?>/perfect-learn/images/i1.png" alt="#" /></span><span>University Life</span></a></li>
-					   <li><a href="#"><span class="icon"><img src="<?= base_url('assets') ;?>/perfect-learn/images/i2.png" alt="#" /></span><span>Graduation</span></a></li>
-					   <li><a href="#"><span class="icon"><img src="<?= base_url('assets') ;?>/perfect-learn/images/i3.png" alt="#" /></span><span>Athletics</span></a></li>
-					   <li><a href="#"><span class="icon"><img src="<?= base_url('assets') ;?>/perfect-learn/images/i4.png" alt="#" /></span><span>Social</span></a></li>
-					   <li><a href="#"><span class="icon"><img src="<?= base_url('assets') ;?>/perfect-learn/images/i5.png" alt="#" /></span><span>Location</span></a></li>
-					   <li><a href="<?= base_url('contact') ;?>"><span class="icon"><img src="<?= base_url('assets') ;?>/perfect-learn/images/i6.png" alt="#" /></span><span>contact</span></a></li>
-					   <li><a href="#"><span class="icon"><img src="<?= base_url('assets') ;?>/perfect-learn/images/i7.png" alt="#" /></span><span>Email</span></a></li>
+					   <li><a href="<?= base_url('lowongan') ;?>"><span class="icon"><img src="<?= base_url('assets') ;?>/perfect-learn/images/i1.png" alt="#" /></span><span>Lowongan</span></a></li>
+                       
+                       <li><a href="#"><span class="icon"><img src="<?= base_url('assets') ;?>/perfect-learn/images/i2.png" alt="#" /></span><span>Pelatihan</span></a></li>
+                       
+                       <li><a href="#"><span class="icon"><img src="<?= base_url('assets') ;?>/perfect-learn/images/i4.png" alt="#" /></span><span>Perusahaan</span></a></li>
+                       
+                       <li><a href="#"><span class="icon"><img src="<?= base_url('assets') ;?>/perfect-learn/images/i5.png" alt="#" /></span><span>Location</span></a></li>
+                      
+                       <li><a href="<?= base_url('contact') ;?>"><span class="icon"><img src="<?= base_url('assets') ;?>/perfect-learn/images/i6.png" alt="#" /></span><span>contact</span></a></li>
+                       
+                       <li><a href="#"><span class="icon"><img src="<?= base_url('assets') ;?>/perfect-learn/images/i7.png" alt="#" /></span><span>Email</span></a></li>
 					</ul>
 				 </div>
 			  </div>
