@@ -70,7 +70,7 @@
                        
                        <li><a href="#"><span class="icon"><img src="<?= base_url('assets') ;?>/perfect-learn/images/i2.png" alt="#" /></span><span>Pelatihan</span></a></li>
                        
-                       <li><a href="#"><span class="icon"><img src="<?= base_url('assets') ;?>/perfect-learn/images/i4.png" alt="#" /></span><span>Perusahaan</span></a></li>
+                       <li><a href="<?= base_url('perusahaan') ;?>"><span class="icon"><img src="<?= base_url('assets') ;?>/perfect-learn/images/i4.png" alt="#" /></span><span>Perusahaan</span></a></li>
                        
                        <li><a href="#"><span class="icon"><img src="<?= base_url('assets') ;?>/perfect-learn/images/i5.png" alt="#" /></span><span>Location</span></a></li>
                       
