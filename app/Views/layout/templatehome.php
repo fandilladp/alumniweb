@@ -40,6 +40,7 @@
 
 <?= $this->renderSection('isicontent'); ?>
 
+
     <!-- ALL JS FILES -->
     <script src="<?= base_url('assets') ;?>/perfect-learn/js/jquery.min.js"></script>
 	<script src="<?= base_url('assets') ;?>/perfect-learn/js/popper.min.js"></script>
