@@ -2,7 +2,7 @@
     $session = session();
 ?>
 <header class="top-header">
-        <nav class="navbar header-nav navbar-expand-lg">
+        <nav class="navbar navbar-dark  header-nav navbar-expand-lg " style="background-color: #168686;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php"><img src="https://el.itera.ac.id/wp-content/uploads/2020/09/itera.png" alt="image"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">

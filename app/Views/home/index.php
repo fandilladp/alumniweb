@@ -22,37 +22,10 @@
             <div class="row">
                 <div class="pogoSlider" id="js-main-slider">
                     <div class="pogoSlider-slide" style="background-image:url('https://el.itera.ac.id/wp-content/themes/bizbuzz/assets/images/default.jpg');">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="slide_text">
-                                        <h3><span span class="theme_color">You only have know one thing</span><br>you can learn anything</h3>
-                                        <h4>Free Educations</h4>
-                                        <br>
-                                        <div class="full center">
-										    <a class="contact_bt" href="#">Start a Course</a>
-										</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                     <div class="pogoSlider-slide" style="background-image:url('https://el.itera.ac.id/wp-content/uploads/2020/09/cropped-back.jpg');">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="slide_text">
-                                        <h3><span span class="theme_color">You only have know one thing</span><br>you can learn anything</h3>
-                                        <h4>Free Educations</h4>
-                                        <br>
-                                        <div class="full center">
-										    <a class="contact_bt" href="#">Start a Course</a>
-										</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        
                 </div>
                 <!-- .pogoSlider -->
             </div>
@@ -87,32 +60,159 @@
 	<!-- section -->
     <div class="section margin-top_50 mb-5">
         <div class="container">
-            <div id="doc" class="yui-t2">
-                <div id="hd">
-                    <div id="header"><h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam asperiores voluptatum amet repudiandae possimus doloremque, consectetur ipsum reprehenderit nesciunt eligendi eos esse eum nulla exercitationem saepe assumenda et quis pariatur!
-                    </h1></div>
-                </div>
-                <div id="bd">
-                    <div id="yui-main">
-                    <div class="yui-b">
-                        <div class="yui-gc">
-                        <div class="yui-u first">
-                            <div class="content">Content Here</div>
-                        </div>
-                        <div class="yui-u">
-                            <div class="content">Content Here</div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="yui-b">
-                    <div id="secondary">Secondary Column</div>
-                    </div>
-                </div>
-                <div id="ft">
-             </div>
+        <div class="container">
+
+<h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Thumbnail Gallery</h1>
+
+<hr class="mt-2 mb-5">
+ 
+<div class="card-deck">
+  <div class="card">
+    
+    <div class="card-body">
+      <h1 class="card-number">1234</h1>
+      <h1 class="card-title">ALUMNI</h1>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <button type="button" class="btn btn-light">Selengkapnya</button>
+    </div>
+  </div>
+  <div class="card">
+    
+    <div class="card-body">
+      <h1 class="card-number">1234</h1>
+      <h1 class="card-title">PENGURUS DAERAH X</h1>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <button type="button" class="btn btn-light">Selengkapnya</button>
+    </div>
+  </div>
+  <div class="card">
+    
+    <div class="card-body">
+      <h1 class="card-number">1234</h1>
+      <h1 class="card-title">KOMUNITAS ALUMNI</h1>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <button type="button" class="btn btn-light">Selengkapnya</button>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron mt-5">
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <a class="btn btn-outline-danger btn-lg" href="#" role="button">Learn more</a>
+</div>
+
+
+
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="card-deck">
+  <div class="card">
+    <img src="https://th.bing.com/th/id/OIP.MvqKXW4tMVvhpEQ1nc37iwHaF6?pid=Api&rs=1" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://th.bing.com/th/id/OIP.MvqKXW4tMVvhpEQ1nc37iwHaF6?pid=Api&rs=1" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://th.bing.com/th/id/OIP.MvqKXW4tMVvhpEQ1nc37iwHaF6?pid=Api&rs=1" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <div class="carousel-item">
+      <div class="card-deck">
+  <div class="card">
+    <img src="https://th.bing.com/th/id/OIP.MvqKXW4tMVvhpEQ1nc37iwHaF6?pid=Api&rs=1" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://th.bing.com/th/id/OIP.MvqKXW4tMVvhpEQ1nc37iwHaF6?pid=Api&rs=1" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://th.bing.com/th/id/OIP.MvqKXW4tMVvhpEQ1nc37iwHaF6?pid=Api&rs=1" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="carousel-item">
+      <div class="card-deck">
+  <div class="card">
+    <img src="https://th.bing.com/th/id/OIP.MvqKXW4tMVvhpEQ1nc37iwHaF6?pid=Api&rs=1" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://th.bing.com/th/id/OIP.MvqKXW4tMVvhpEQ1nc37iwHaF6?pid=Api&rs=1" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://th.bing.com/th/id/OIP.MvqKXW4tMVvhpEQ1nc37iwHaF6?pid=Api&rs=1" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
             </div>
         </div>
+        <button type="button" class="btn btn-info mb-5">Selengkapnya</button>
     </div>
 	<!-- section -->
     <div class="section contact_section" style="background:#168686;">
