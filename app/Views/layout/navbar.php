@@ -14,7 +14,7 @@
                     <ul class="navbar-nav">
                         <li><a class="nav-link active" href="<?= base_url('home') ;?>">Home</a></li>
                         <li><a class="nav-link" href="https://el.itera.ac.id/">About</a></li>
-                        <li><a class="nav-link" href="<?= base_url('alumni') ;?>">Alumni</a></li>
+                        <li><a class="nav-link" href="<?= base_url('alumni/created') ;?>">Alumni</a></li>
                         <li><a class="nav-link" href="<?= base_url('tracer/index') ;?>">Tracer Study</a></li>
                 <?php if ($session->get('isLoggedIn')) : ?>
                      <li class="nav-item">

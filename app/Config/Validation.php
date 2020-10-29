@@ -84,6 +84,56 @@ class Validation
 			'required' => '{field} Harus Diisi',
 		],
 	];
+
+	public $angket = [
+		'namaprojek' => [
+			'rules' => 'required|min_length[3]',
+		],
+		'deskripsi' => [
+			'rules' => 'required|max_length[250]',
+		],
+		'gambar' => [
+			'rules' => 'uploaded[gambar]',
+			'max_size' => '2000',
+			'ext_in' => 'png,jpg,jpeg',
+		]
+	];
+
+	public $angket_errors = [
+		'namaprojek' => [
+			'required' => '{field} Harus diisi',
+			'min_length' => '{field} Minimum 3 karakter',
+		],
+		'deskripsi' => [
+			'required' => '{field} Harus diisi',
+			'max_length' => '{field} deskripsi terlalu banyak',
+		],
+		'gambar' => [
+			'uploaded' => '{field} Harus di upload',
+			'max_size' => 'size gambar terlalu besar, maksimum 2 mb',
+			'ext_in' => 'file yang kamu pilih bukan gambar',
+		]
+	];
+
+	public $angketupdate = [
+		'namaprojek' => [
+			'rules' => 'required|min_length[3]',
+		],
+		'deskripsi' => [
+			'rules' => 'required|max_length[250]',
+		]
+	];
+
+	public $angketupdate_errors = [
+		'namaprojek' => [
+			'required' => '{field} Harus diisi',
+			'min_length' => '{field} Minimum 3 karakter',
+		],
+		'deskripsi' => [
+			'required' => '{field} Harus diisi',
+			'max_length' => '{field} deskripsi terlalu banyak',
+		]
+	];
 	
 	//--------------------------------------------------------------------
 }
