@@ -52,18 +52,15 @@ class Alumni extends BaseController
                     $DataAngketModel = new \App\Models\DataAngketModel();
 
                     $datavalid = new \App\Entities\DataAngket();
-                    $generate = base64_encode(random_bytes(32));
-                    $token = preg_replace("/[^a-zA-Z0-9]/", "", $generate);
-
-                    $datavalid->namaprojek = htmlspecialchars($this->request->getPost('namaprojek'));
-                    $datavalid->token = $token;
-                    $datavalid->role = 'alumni';
-                    $datavalid->category = 'all';
-                    $datavalid->deskripsi = htmlspecialchars($this->request->getPost('deskripsi'));
-                    $datavalid->gambar = $this->request->getFile('gambar');
-                    $datavalid->statusfield1 = $this->request->getPost('statusfield1');
-                    $datavalid->statusfield2 = $this->request->getPost('statusfield2');
-                    $datavalid->statusfield3 = $this->request->getPost('statusfield3');
+                    $datavalid->namaalumni = htmlspecialchars($this->request->getPost('namaalumni'));
+                    $datavalid->nim = htmlspecialchars($this->request->getPost('nim'));
+                    $datavalid->ipk = htmlspecialchars($this->request->getPost('ipk'));
+                    $datavalid->lamastudy = htmlspecialchars($this->request->getPost('lamastudy'));
+                    $datavalid->waktutunggu = htmlspecialchars($this->request->getPost('waktutunggu'));
+                    $datavalid->alamat = htmlspecialchars($this->request->getPost('alamat'));
+                    $datavalid->nomorhp = htmlspecialchars($this->request->getPost('nomorhp'));
+                    $datavalid->pendidikan = htmlspecialchars($this->request->getPost('pendidikan'));
+                    $datavalid->pekerjaan = htmlspecialchars($this->request->getPost('pekerjaan'));                    
                     $datavalid->created_by = $this->session->get('username');
                     $datavalid->created_date = date("Y-m-d H:i:s");
 

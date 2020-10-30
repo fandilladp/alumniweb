@@ -6,10 +6,10 @@ use CodeIgniter\Model;
 
 class DataAngketModel extends Model
 {
-    protected $table = 'data_projek';
+    protected $table = 'data_angket';
     protected $primaryKey = 'id';
     protected $allowedFields = [
-        'namaprojek', 'token', 'role', 'category', 'deskripsi', 'statusfield1', 'statusfield2', 'statusfield3', 'gambar', 'created_by', 'created_date', 'updated_date', 'datafield_1', 'datafield_2', 'datafield_3'
+        'namaalumni', 'nim', 'ipk', 'lamastudy', 'waktutunggu', 'alamat', 'nomorhp', 'pendidikan', 'pekerjaan', 'created_by', 'created_date', 'updated_date'
     ];
     protected $returnType = 'App\Entities\DataProjek';
     protected $useTimestamps = false;

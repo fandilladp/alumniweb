@@ -86,54 +86,69 @@ class Validation
 	];
 
 	public $angket = [
-		'namaprojek' => [
+		'namaalumni' => [
 			'rules' => 'required|min_length[3]',
 		],
-		'deskripsi' => [
-			'rules' => 'required|max_length[250]',
+		'nim' => [
+			'rules' => 'required|max_length[10]',
 		],
-		'gambar' => [
-			'rules' => 'uploaded[gambar]',
-			'max_size' => '2000',
-			'ext_in' => 'png,jpg,jpeg',
+		'ipk' => [
+			'rules' => 'required|max_length[4]',
+		],
+		'lamastudy' => [
+			'rules' => 'required|max_length[20]'
+		],
+		'waktutunggu' => [
+			'rules' => 'required'
+		],
+		'alamat' => [
+			'rules' => 'required'
+		],
+		'nomorhp' => [
+			'rules' => 'required'
+		],
+		'pendidikan' => [
+			'rules' => 'required'
+		],
+		'pekerjaan' => [
+			'rules' => 'required'
 		]
 	];
 
 	public $angket_errors = [
-		'namaprojek' => [
+		'namaalumni' => [
 			'required' => '{field} Harus diisi',
 			'min_length' => '{field} Minimum 3 karakter',
 		],
-		'deskripsi' => [
+		'nim' => [
 			'required' => '{field} Harus diisi',
-			'max_length' => '{field} deskripsi terlalu banyak',
+			'max_length' => '{field} terlalu banyak',
 		],
-		'gambar' => [
-			'uploaded' => '{field} Harus di upload',
-			'max_size' => 'size gambar terlalu besar, maksimum 2 mb',
-			'ext_in' => 'file yang kamu pilih bukan gambar',
+		'ipk' => [
+			'required' => '{field} Harus diisi',
+			'max_length' => '{field} tidak sesuai'
+		],
+		'lamastudy' => [
+			'required' => '{field} Harus diisi',
+			'max_length' => '{field} tidak sesuai'
+		],
+		'waktutunggu' => [
+			'required' => '{field} Harus diisi'
+		],
+		'alamat' => [
+			'required' => '{field} Harus diisi'
+		],
+		'nomorhp' => [
+			'required' => '{field} Harus diisi'
+		],
+		'pendidikan' => [
+			'required' => '{field} Harus diisi'
+		],
+		'pekerjaan' => [
+			'required' => '{field} Harus diisi'
 		]
 	];
 
-	public $angketupdate = [
-		'namaprojek' => [
-			'rules' => 'required|min_length[3]',
-		],
-		'deskripsi' => [
-			'rules' => 'required|max_length[250]',
-		]
-	];
-
-	public $angketupdate_errors = [
-		'namaprojek' => [
-			'required' => '{field} Harus diisi',
-			'min_length' => '{field} Minimum 3 karakter',
-		],
-		'deskripsi' => [
-			'required' => '{field} Harus diisi',
-			'max_length' => '{field} deskripsi terlalu banyak',
-		]
-	];
 	
 	//--------------------------------------------------------------------
 }
