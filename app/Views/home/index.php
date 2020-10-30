@@ -29,9 +29,6 @@
                                         <h3><span span class="theme_color">You only have know one thing</span><br>you can learn anything</h3>
                                         <h4>Free Educations</h4>
                                         <br>
-                                        <div class="full center">
-										    <a class="contact_bt" href="#">Start a Course</a>
-										</div>
                                     </div>
                                 </div>
                             </div>
@@ -45,9 +42,6 @@
                                         <h3><span span class="theme_color">You only have know one thing</span><br>you can learn anything</h3>
                                         <h4>Free Educations</h4>
                                         <br>
-                                        <div class="full center">
-										    <a class="contact_bt" href="#">Start a Course</a>
-										</div>
                                     </div>
                                 </div>
                             </div>
@@ -92,29 +86,90 @@
                     <div id="header"><h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam asperiores voluptatum amet repudiandae possimus doloremque, consectetur ipsum reprehenderit nesciunt eligendi eos esse eum nulla exercitationem saepe assumenda et quis pariatur!
                     </h1></div>
                 </div>
-                <div id="bd">
-                    <div id="yui-main">
-                    <div class="yui-b">
-                        <div class="yui-gc">
-                        <div class="yui-u first">
-                            <div class="content">Content Here</div>
-                        </div>
-                        <div class="yui-u">
-                            <div class="content">Content Here</div>
-                        </div>
-                        </div>
+                <div class="card-deck">
+                    <!-- mualai kartu gambar -->
+                <div class="card">
+                    <img src="https://pbs.twimg.com/profile_images/744099420736610310/gWAg1Qf9.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Miftahul Fauzi</h5>
+                    <p class="card-text">Telah hilang!!! Anak berusia 20 tahun di Lampung Selatan,Way Huwi.</p>
                     </div>
-                    </div>
-                    <div class="yui-b">
-                    <div id="secondary">Secondary Column</div>
+                    <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
                     </div>
                 </div>
-                <div id="ft">
-             </div>
+                <div class="card">
+                    <img src="http://localhost/alumniweb/public/assets/perfect-learn/images/img10.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                    <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="http://localhost/alumniweb/public/assets/perfect-learn/images/img10.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    </div>
+                    <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+                <div class="container">
+  <div class="row">
+    <!-- Team Member 1 -->
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-0 shadow">
+        <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title mb-0">Team Member</h5>
+          <div class="card-text text-black-50">Web Developer</div>
+        </div>
+      </div>
+    </div>
+    <!-- Team Member 2 -->
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-0 shadow">
+        <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title mb-0">Team Member</h5>
+          <div class="card-text text-black-50">Web Developer</div>
+        </div>
+      </div>
+    </div>
+    <!-- Team Member 3 -->
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-0 shadow">
+        <img src="https://source.unsplash.com/sNut2MqSmds/500x350" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title mb-0">Team Member</h5>
+          <div class="card-text text-black-50">Web Developer</div>
+        </div>
+      </div>
+    </div>
+    <!-- Team Member 4 -->
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-0 shadow">
+        <img src="https://source.unsplash.com/ZI6p3i9SbVU/500x350" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title mb-0">Team Member</h5>
+          <div class="card-text text-black-50">Web Developer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.row -->
+
+</div>
+                </div>
             </div>
         </div>
     </div>
 	<!-- section -->
+    <!-- ini buat tanya -->
     <div class="section contact_section" style="background:#168686;">
         <div class="container">
                <div class="row">
@@ -125,6 +180,7 @@
                  </div>
 				 <div class="layout_padding col-lg-6 col-md-6 col-sm-12">
 				    <div class="contact_form">
+                        <h2 class="abdul">tanya aja</h2>
 					    <form action="contact.html">
 						   <fieldset>
 						       <div class="full field">
