@@ -112,7 +112,92 @@ class Validation
 		],
 		'pekerjaan' => [
 			'rules' => 'required'
-		]
+		],
+	];
+	public $kepuasan =[
+		'statuskerja' => [
+			'rules' => 'required'
+		],
+		'bidangpekerjaan' => [
+			'rules' => 'required'
+		],
+		'jabatan' => [
+			'rules' => 'required'
+		],
+		'kepuasanprodi' => [
+			'rules' => 'required'
+		],
+		'kesesuaianilmu' => [
+			'rules' => 'required'
+		],
+		'pencariankerja' => [
+			'rules' => 'required'
+		],
+		'hambatan' => [
+			'rules' => 'required'
+		],
+		'pindahkerja' => [
+			'rules' => 'required'
+		],
+		'kemampuanbahasainggris' => [
+			'rules' => 'required'
+		],
+		'kemampuantik' => [
+			'rules' => 'required'
+		],
+		'kemampuansoftware' => [
+			'rules' => 'required'
+		],
+		'mensyaratkanipk' => [
+			'rules' => 'required'
+		],
+		'manfaatstudiketerampilanteknis' => [
+			'rules' => 'required'
+		],
+		'manfaatstudipengetahuanteoritis' => [
+			'rules' => 'required'
+		],
+		'manfaatstudiprestis' => [
+			'rules' => 'required'
+		],
+		'manfaatstudikepercayaandiri' => [
+			'rules' => 'required'
+		],
+		'manfaatstudidalampendapatan' => [
+			'rules' => 'required'
+		],
+		'manfaatstudidalamkarir' => [
+			'rules' => 'required'
+		],
+		'manfaatstudidalamlintasbidang' => [
+			'rules' => 'required'
+		],
+		'manfaatstudidalammengikutiipteks' => [
+			'rules' => 'required'
+		],
+		'kebutuhanpengetahuanmahasiswa' => [
+			'rules' => 'required'
+		],
+	];
+	public $hubunganprodi = [
+		'hubungandenganprodi' => [
+			'rules' => 'required'
+		],
+		'bagaimanahubunganterjalin' => [
+			'rules' => 'required'
+		],
+		'komunikasidalamrangka' => [
+			'rules' => 'required'
+		],
+		'dibuatkansistemalumni' => [
+			'rules' => 'required'
+		],
+		'pelatihan' => [
+			'rules' => 'required'
+		],
+		'saransistemalumni' => [
+			'rules' => 'required'
+		],
 	];
 
 	public $angket_errors = [
@@ -146,8 +231,95 @@ class Validation
 		],
 		'pekerjaan' => [
 			'required' => '{field} Harus diisi'
-		]
+		],
 	];
+	public $kepuasan_errors = [
+		'statuskerja' => [
+			'required' => '{field} Harus diisi'
+		],
+		'bidangpekerjaan' => [
+			'required' => '{field} Harus diisi'
+		],
+		'jabatan' => [
+			'required' => '{field} Harus diisi'
+		],
+		'kepuasanprodi' => [
+			'required' => '{field} Harus diisi'
+		],
+		'kesesuaianilmu' => [
+			'required' => '{field} Harus diisi'
+		],
+		'pencariankerja' => [
+			'required' => '{field} Harus diisi'
+		],
+		'hambatan' => [
+			'required' => '{field} Harus diisi'
+		],
+		'pindahkerja' => [
+			'required' => '{field} Harus diisi'
+		],
+		'kemampuanbahasainggris' => [
+			'required' => '{field} Harus diisi'
+		],
+		'kemampuantik' => [
+			'required' => '{field} Harus diisi'
+		],
+		'kemampuansoftware' => [
+			'required' => '{field} Harus diisi'
+		],
+		'mensyaratkanipk' => [
+			'required' => '{field} Harus diisi'
+		],
+		'manfaatstudiketerampilanteknis' => [
+			'required' => '{field} Harus diisi'
+		],
+		'manfaatstudipengetahuanteoritis' => [
+			'required' => '{field} Harus diisi'
+		],
+		'manfaatstudiprestis' => [
+			'required' => '{field} Harus diisi'
+		],	
+		'manfaatstudikepercayaandiri' => [
+			'required' => '{field} Harus diisi'
+		],
+		'manfaatstudidalampendapatan' => [
+			'required' => '{field} Harus diisi'
+		],
+		'manfaatstudidalamkarir' => [
+			'required' => '{field} Harus diisi'
+		],
+		'manfaatstudidalamlintasbidang' => [
+			'required' => '{field} Harus diisi'
+		],
+		'manfaatstudidalammengikutiipteks' => [
+			'required' => '{field} Harus diisi'
+		],	
+		'kebutuhanpengetahuanmahasiswa' => [
+			'required' => '{field} Harus diisi'
+		],
+	];
+	public $hubunganprodi_errors = [
+		'hubungandenganprodi' => [
+			'required' => '{field} Harus diisi'
+		],
+		'bagaimanahubunganterjalin' => [
+			'required' => '{field} Harus diisi'
+		],
+		'komunikasidalamrangka' => [
+			'required' => '{field} Harus diisi'
+		],
+		'dibuatkansistemalumni' => [
+			'required' => '{field} Harus diisi'
+		],
+		'pelatihan' => [
+			'required' => '{field} Harus diisi'
+		],
+		'saransistemalumni' => [
+			'required' => '{field} Harus diisi'
+		],
+	];
+
+
 
 	
 	//--------------------------------------------------------------------
