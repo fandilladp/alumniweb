@@ -26,6 +26,24 @@ class User extends BaseController
         }
         return redirect()->to(site_url('auth/login'));
     }
+    public function alumni()
+    {
+        if ($this->session->get('isLoggedIn')) {
+            // $dataprojek = new \App\Models\DataProjekModel();
+            $userModel = new \App\Models\UserModel();
+
+            $username = $this->session = session('username');
+            $myuser = $userModel->where('username', $username)->first();
+            // $myprojek = $dataprojek->where('created_by', $username)->findAll();
+
+
+            return view('user/alumni', [
+                // 'myprojek' => $myprojek,
+                'myuser' => $myuser,
+            ]);
+        }
+        return redirect()->to(site_url('auth/login'));
+    }
 
     //--------------------------------------------------------------------
 
