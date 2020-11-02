@@ -74,7 +74,7 @@
                                         </p>
                                     </div>
                                 <?php endif ?>
-                                <?= form_open_multipart('Alumni/hubunganalumni'); ?>
+                                <?= form_open_multipart('angket/hubunganalumni'); ?>
                                 <div class="form-group">
                                     <?= form_label("Setelah lulus, apakah saudara masih berhubungan atau menjalin komunikasi dengan program studi", "hubungandenganprodi") ?>
                                     <div class="input-group-append">

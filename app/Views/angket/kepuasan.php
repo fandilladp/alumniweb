@@ -170,7 +170,7 @@
                                         </p>
                                     </div>
                                 <?php endif ?>
-                                <?= form_open_multipart('Alumni/kepuasan'); ?>
+                                <?= form_open_multipart('angket/kepuasan'); ?>
                                 <div class="form-group">
                                     <?= form_label("Apakah saudara sudah mendapatkan pekerjaan ?", "statuskerja") ?>
                                     <div class="input-group-append">

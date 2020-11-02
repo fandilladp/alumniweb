@@ -6,13 +6,19 @@ use CodeIgniter\Entity;
 
 class DataAngket extends Entity
 {
-    public function setGambar($file)
+    public function setGambar($file, $resume)
     {   
-        $fileName = $file->getRandomName();
-        $writePath = './uploads';
-        $file->move($writePath, $fileName);
-        $this->attributes['gambar'] = $fileName;
+        $gambar = $file->getRandomName();
+        $cv = $resume->getRandomName();
+        
+        $writePath1 = './uploads';
+        $writePath = './cv';
+
+        $file->move($writePath1, $gambar);
+        $resume->move($writePath, $cv);
+        
+        $this->attributes['gambar'] = $gambar;
+        $this->attributes['cv'] = $cv;
         return $this;
     }
 }
-

@@ -92,7 +92,7 @@
                                         </p>
                                     </div>
                                 <?php endif ?>
-                                <?= form_open_multipart('Alumni/created'); ?>
+                                <?=  form_open('Angket/created'); ?>
                                 <div class="form-group">
                                     <?= form_label("Nama Lengkap Saudara", "namaalumni") ?>
                                     <div class="input-group-append">

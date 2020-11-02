@@ -199,6 +199,11 @@ class Validation
 			'rules' => 'required'
 		],
 	];
+	public $foto = [
+		'cv' => 'max_size[cv,500]|ext_in[cv,pdf]',
+		'gambar' => 'max_size[gambar,500]|ext_in[gambar,png,jpg,jpeg]'
+	];
+
 
 	public $angket_errors = [
 		'namaalumni' => [
@@ -317,6 +322,16 @@ class Validation
 		'saransistemalumni' => [
 			'required' => '{field} Harus diisi'
 		],
+	];
+	public $foto_errors = [
+		'cv' => [
+			'max_size' => 'size terlalu besar, maksimum 500 kb',
+			'ext_in' => 'file harus pdf',
+		],
+		'gambar' => [
+			'max_size' => 'size gambar terlalu besar, maksimum 500 kb',
+			'ext_in' => 'file yang kamu pilih bukan gambar',
+		]
 	];
 
 

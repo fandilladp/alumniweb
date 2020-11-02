@@ -315,7 +315,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <p class="crp">© Copyrights 2019 design by html.design</p>
+                    <p class="crp">© Copyrights alumnielektro 2020</p>
                 </div>
             </div>
         </div>
