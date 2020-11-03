@@ -35,29 +35,32 @@
                             Tracer Study merupakan salah satu metode yang digunakan oleh beberapa perguruan tinggi, khususnya di Indonesia untuk memperoleh umpan balik dari alumni. Umpan balik yang diperoleh dari alumni ini dibutuhkan oleh perguruan tinggi dalam usahanya untuk perbaikan serta pengembangan kualitas dan sistem pendidikan. Tak hanya itu, umpan balik inipun dapat bermanfaat untuk memetakan dunia usaha dan industri agar jeda diantara kompetensi yang diperoleh alumni saat kuliah dengan tuntutan dunia kerja dapat diperkecil.
                             </div>
                         </div>
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-chart-area mr-1"></i>
-                                Area Chart Example
+                        <div class="row">
+                        <div class="col-xl-4">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-user mr-1"></i>
+                                    Terjalinnya hubungan alumni dengan prodi
+                                </div>
+                                <div class="card-body"><canvas id="hubungandenganprodi" width="100%" height="50"></canvas></div>
                             </div>
-                            <div class="card-body"><canvas id="myAreaChart" width="100%" height="30"></canvas></div>
-                            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
                         </div>
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-chart-area mr-1"></i>
-                                Area Chart Example
+                        <div class="col-xl-4">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-bar mr-1"></i>
+                                    Alumni Teknik Elektro yang sudah bekerja
+                                </div>
+                                <div class="card-body"><canvas id="statusbekerja" width="100%" height="50"></canvas></div>
                             </div>
-                            <div class="card-body"><canvas id="myAreaChart" width="100%" height="30"></canvas></div>
-                            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
                         </div>
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-chart-area mr-1"></i>
-                                Area Chart Example
+                        <div class="col-lg-4">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="far fa-thumbs-up"></i> Kepuasan Alumni Terhadap Program Studi
+                                </div>
+                                <div class="card-body"><canvas id="kepuasanprodi" width="100%" height="50"></canvas></div>
                             </div>
-                            <div class="card-body"><canvas id="myAreaChart" width="100%" height="30"></canvas></div>
-                            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
                         </div>
                     </div>
                 </main>
@@ -80,7 +83,7 @@
         <script src="<?= base_url('assets') ;?>/sb-admin/utama/js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <script src="<?= base_url('assets') ;?>/sb-admin/utama/assets/demo/chart-area-demo.js"></script>
-        <script src="<?= base_url('assets') ;?>/sb-admin/utama/assets/demo/chart-bar-demo.js"></script>
+        <script src="<?= base_url('assets') ;?>/sb-admin/utama/assets/demo/chart-pie-demo.js"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
         <script src="<?= base_url('assets') ;?>/sb-admin/utama/assets/demo/datatables-demo.js"></script>

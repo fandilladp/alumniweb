@@ -16,7 +16,7 @@
 <body class="sb-nav-fixed">
 
     <?php
-      $namaalumni = [
+    $namaalumni = [
         'name'  => 'namaalumni',
         'id'    => 'namaalumni',
         'value' => $alumni->namaalumni,
@@ -40,7 +40,13 @@
         'value' => null,
         'class' => 'form-control',
     ];
-
+    $upcv = [
+        'name' => 'submit',
+        'id' => 'submit',
+        'value' => 'Save Changes',
+        'class' => 'btn btn btn-primary',
+        'type' => 'submit',
+    ];
     $submit = [
         'name' => 'submit',
         'id' => 'submit',
@@ -57,22 +63,14 @@
         <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
         <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-            <div class="input-group">
-                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-                <div class="input-group-append">
-                    <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
-                </div>
-            </div>
+
         </form>
         <!-- Navbar-->
         <ul class="navbar-nav ml-auto ml-md-0">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                    <a class="dropdown-item" href="#">Settings</a>
-                    <a class="dropdown-item" href="#">Activity Log</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="login.html">Logout</a>
+                    <a class="dropdown-item" data-toggle="modal" data-target="#logout" href="">Logout</a>
                 </div>
             </li>
         </ul>
@@ -135,55 +133,43 @@
                     <ol class="breadcrumb mt-2 mb-4">
                         <li class="breadcrumb-item active">Dashboard</li>
                     </ol>
-
-                    <div class="container row bg-dark m-auto p-3">
-                        <div class="card-deck row">
-                            <div class="card col-4">
-                                <div class="card-body text-center">
-                                    <h4><strong>Data Diri</strong></h4>
-                                    <img width="100%" height="50%" src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Education%2C_Studying%2C_University%2C_Alumni_-_icon.png" alt="">
-                                    <hr>
-                                    <a href="<?= base_url('angket/created'); ?>">
-                                        <div class="btn-lg btn-outline-primary text-center">
-                                            Mulai <i class="fas fa-arrow-circle-right"></i>
-                                        </div>
-                                    </a>
+                    <div class="row">
+                        <div class="col-xl-4 col-md-6">
+                            <div class="card bg-warning text-white mb-4">
+                                <div class="card-body"><i class="far fa-id-card"></i> Data Diri</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="<?= base_url('angket/created'); ?>">Mulai</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
-                            <div class="card col-4">
-                                <div class="card-body text-center   ">
-                                    <h4><strong>Kepuasan Lulusan</strong></h4>
-                                    <img width="100%" height="50%" src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Education%2C_Studying%2C_University%2C_Alumni_-_icon.png" alt="">
-                                    <hr>
-                                    <a href="<?= base_url('angket/kepuasan'); ?>">
-                                        <div class="btn-lg btn-outline-primary text-center">
-                                            Mulai <i class="fas fa-arrow-circle-right"></i>
-                                        </div>
-                                    </a>
+                        </div>
+                        <div class="col-xl-4 col-md-6">
+                            <div class="card bg-info text-white mb-4">
+                                <div class="card-body"><i class="far fa-smile-beam"></i> Kepuasan Lulusan</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="<?= base_url('angket/kepuasan'); ?>">Mulai</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
-                            <div class="card col-4">
-                                <div class="card-body text-center   ">
-                                    <h4><strong>Hubungan Alumni</strong></h4>
-                                    <img width="100%" height="50%" src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Education%2C_Studying%2C_University%2C_Alumni_-_icon.png" alt="Thumbnail alumni">
-                                    <hr>
-                                    <a href="<?= base_url('angket/hubunganalumni'); ?>">
-                                        <div class="btn-lg btn-outline-primary text-center">
-                                            Mulai
-                                        </div>
-                                    </a>
+                        </div>
+                        <div class="col-xl-4 col-md-6">
+                            <div class="card bg-primary text-white mb-4">
+                                <div class="card-body"><i class="fas fa-university"></i> Hubungan Alumni</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="<?= base_url('angket/hubunganalumni'); ?>">View Details</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="container mt-2 bg-dark pb-1">
-                        <div class="container row">
-                            <div class="col-4">
+                    <div class="container mt-2 bg-dark pb-1 rounded">
+                        <div class="row">
+                            <div class="col-xl-4">
                                 <div id="avatar" class="mt-5 ">
                                     <img src="<?= base_url('uploads/' . $alumni->gambar); ?>" alt="..." class="rounded img-thumbnail shadow">
                                 </div>
                             </div>
-                            <div class="col-8">
+                            <div class="col-xl-8">
                                 <form>
                                     <div class="form-group mt-5 ml-3 pt-5">
                                         <?php if ($errors != null) : ?>
@@ -206,13 +192,16 @@
                                 </form>
                             </div>
                         </div>
-
-
+                        <div class="text-right p-2">
+                            <button data-toggle="modal" data-target="#modalupdate" class="btn-primary rounded"><i class="fas fa-user-edit"></i></button>
+                        </div>
+                    </div>
+                    <div class="container bg-dark pb-3 rounded">
                         <div class="container form-group mt-5 pt-5">
                             <embed width="100%" height=500px src="<?= base_url('cv/test.pdf'); ?>" type="">
                         </div>
-                        <div class="text-right mb-2 p-2">
-                            <button data-toggle="modal" data-target="#modalupdate" class="btn-primary rounded"><i class="fas fa-user-edit"></i></button>
+                        <div class="text-right p-2">
+                            <button data-toggle="modal" data-target="#cvupdate" class="btn-primary rounded"><i class="fas fa-user-edit"></i></button>
                         </div>
                     </div>
             </main>
@@ -273,14 +262,53 @@
                 </div>
                 <label for="gambar">Foto Profile</label>
                 <?= form_upload($gambar) ?>
-                <hr>
-                <label for="cv">Resume/CV</label>
-                <?= form_upload($cv) ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <?= form_submit($submit) ?>
                 <?= form_close() ?>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ============= -->
+<div class="modal fade" id="cvupdate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Logut?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            <?= form_open_multipart('user/cv/' . $myuser->id); ?>
+            <label for="cv">Resume/CV</label>
+                <?= form_upload($cv) ?>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <?= form_submit($upcv) ?>
+            <?= form_close() ?>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Logut?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to Logout.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a id="delete" class="btn btn-danger" href="<?= base_url('auth/logout'); ?>">logout</a>
             </div>
         </div>
     </div>

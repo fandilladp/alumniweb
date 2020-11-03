@@ -13,31 +13,31 @@ class Alumni extends BaseController
     //--------------------------------------------------------------------
     public function index()
     {
-        // if ($this->session->get('isLoggedIn')) {
-            return view('alumni/index');
-        // }
-        // return redirect()->to(site_url('auth/login'));
+        $dataalumni = new \App\Models\DataAngketModel();
+        $jumlahlumni = $dataalumni->countAllResults();
+        $namaalumni = $dataalumni->findColumn('namaalumni');
+        $deskripsi = $dataalumni->findColumn('deskripsi');
+        $avatar = $dataalumni->findColumn('gambar');
+        $id = $dataalumni->findColumn('id');
+        return view('alumni/index', [
+            'id' => $id,
+            'jumlah' => $jumlahlumni,
+            'namaalumni' => $namaalumni,
+            'deskripsi' => $deskripsi,
+            'avatar' => $avatar
+        ]);
     }
     //--------------------------------------------------------------------
-    public function projek()
+    public function view()
     {
-        if ($this->session->get('isLoggedIn')) {
-            $id = $this->request->uri->getSegment(3);
-
-            $dataangketmodel = new \App\Models\DataAngketModel();
-
-            $projek = $dataangketmodel->find($id);
-            $valid = $projek->created_by;
-            if ($valid == $this->session = session('username')) {
-                return view('alumni/projek', [
-                    'projek' => $projek,
-                ]);
-            }
-            return redirect()->to(site_url('auth/logout'));
-        }
-        return redirect()->to(site_url('auth/login'));
+        $id = $this->request->uri->getSegment(3);
+        $dataangketmodel = new \App\Models\DataAngketModel();
+        $data = $dataangketmodel->where('id', $id)->findColumn('cv');
+        return view('alumni/view', [
+            'cv' => $data,
+        ]);
     }
     //--------------------------------------------------------------------
-    
+
     //--------------------------------------------------------------------
 }

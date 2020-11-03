@@ -450,7 +450,7 @@ a.navbar-brand img {
     width: 950px;
 }
 .full > img {
-    width: 100%;
+    width: 50px;
 }
 .blog_img_popular {
     margin-bottom: 30px;
@@ -475,38 +475,11 @@ a.navbar-brand img {
 	padding-right: 100px;
 }
 
-.search-btn {
-	float: right;
-	width: 41px;
-	height: 41px;
-	background: transparent;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: #111;
-}
-
-.search-txt {
-	border: none;
-	outline: none;
-	float: left;
-	padding: 0;
-	color: #000;
-	font-size: 14px;
-	line-height: 41px;
-	width: 0;
-	transition: width 400ms;
-	background: #fff;
-	padding: 0;
-	font-weight: 300;
-}
 
 .theme_color {
-	color: red;
+	color: #d4a81e;
 }
-.saputraa{
-	color: green;
-}
+
 
 /*------------------------------------------------------------------ Banner -------------------------------------------------------------------*/
 
