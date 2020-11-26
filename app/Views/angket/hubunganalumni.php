@@ -74,12 +74,14 @@
                                         </p>
                                     </div>
                                 <?php endif ?>
-                                <?= form_open_multipart('angket/hubunganalumni'); ?>
+                                <?= form_open('angket/hubunganalumni'); ?>
                                 <div class="form-group">
-                                    <?= form_label("Setelah lulus, apakah saudara masih berhubungan atau menjalin komunikasi dengan program studi", "hubungandenganprodi") ?>
-                                    <div class="input-group-append">
-                                        <?= form_input($hubungandenganprodi) ?>
-                                    </div>
+                                <select class="custom-select my-1 mr-sm-2" name="hubungandenganprodi">
+                                    <option selected>Pilih...</option>
+                                    <option value="10">Hubungan Terjalin</option>
+                                    <option value="0">Hubungan Tidak terjalin</option>
+
+                                </select>
                                 </div>
                                 <div class="form-group">
                                     <?= form_label("Bagaimana hubungan saudara dengan program studi terus terjalin ?", "bagaimanahubunganterjalin") ?>

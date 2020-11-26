@@ -22,10 +22,9 @@
     <div class="container-fluid">
       <div class="row">
         <div class="pogoSlider" id="js-main-slider">
-          <div class="pogoSlider-slide" style="background-image:url('https://el.itera.ac.id/wp-content/themes/bizbuzz/assets/images/default.jpg');">
-
+          <div class="pogoSlider-slide" style="background-image:url('http://localhost/alumniweb/public/assets/img/1.jpg');">
           </div>
-          <div class="pogoSlider-slide" style="background-image:url('https://el.itera.ac.id/wp-content/uploads/2020/09/cropped-back.jpg');">
+          <div class="pogoSlider-slide" style="background-image:url('http://localhost/alumniweb/public/assets/img/2.jpg');">
 
           </div>
           <!-- .pogoSlider -->
@@ -63,7 +62,7 @@
             <div class="card">
 
               <div class="card-body">
-                <h1 class="card-number">1234</h1>
+                <h1 class="card-number"><?= $jumlahalumni ;?></h1>
                 <h1 class="card-title">ALUMNI</h1>
                 <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                 <button type="button" class="btn btn-light">Selengkapnya</button>
@@ -72,7 +71,7 @@
             <div class="card">
 
               <div class="card-body">
-                <h1 class="card-number">1234</h1>
+                <h1 class="card-number">0</h1>
                 <h1 class="card-title">PENGURUS DAERAH X</h1>
                 <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                 <button type="button" class="btn btn-light">Selengkapnya</button>
@@ -81,7 +80,7 @@
             <div class="card">
 
               <div class="card-body">
-                <h1 class="card-number">1234</h1>
+                <h1 class="card-number">0</h1>
                 <h1 class="card-title">KOMUNITAS ALUMNI</h1>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                 <button type="button" class="btn btn-light">Selengkapnya</button>
@@ -213,7 +212,7 @@
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12">
           <div class="full float-right_img">
-            <img src="<?= base_url('assets'); ?>/perfect-learn/images/img10.png" alt="#">
+            <img src="" alt="">
           </div>
         </div>
         <div class="layout_padding col-lg-6 col-md-6 col-sm-12">

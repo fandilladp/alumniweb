@@ -105,5 +105,5 @@
       </ul>
 
     </div>
-
+    <script src="<?= base_url('assets') ;?>/vendor/js/lowongan.js"></script>
     <?= $this->endSection() ;?>

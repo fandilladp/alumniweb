@@ -37,21 +37,21 @@
 	/* ..............................................
     Properties Filter
     ................................................. */
-	var Container = $('.container');
-	Container.imagesLoaded(function () {
-		var portfolio = $('.properties-menu');
-		portfolio.on('click', 'button', function () {
-			$(this).addClass('active').siblings().removeClass('active');
-			var filterValue = $(this).attr('data-filter');
-			$grid.isotope({
-				filter: filterValue
-			});
-		});
-		var $grid = $('.properties-list').isotope({
-			itemSelector: '.properties-grid'
-		});
+	// var Container = $('.container');
+	// Container.imagesLoaded(function () {
+	// 	var portfolio = $('.properties-menu');
+	// 	portfolio.on('click', 'button', function () {
+	// 		$(this).addClass('active').siblings().removeClass('active');
+	// 		var filterValue = $(this).attr('data-filter');
+	// 		$grid.isotope({
+	// 			filter: filterValue
+	// 		});
+	// 	});
+	// 	var $grid = $('.properties-list').isotope({
+	// 		itemSelector: '.properties-grid'
+	// 	});
 
-	});
+	// });
 
 	/* ..............................................
     Gallery
