@@ -30,7 +30,7 @@
     <!-- Custom CSS -->
 	<link rel="stylesheet" href="<?= base_url('assets') ;?>/perfect-learn/css/custom.css" />
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets') ;?>/vendor/bootstrap/css/isicontent.css" >
-
+	<script src="<?= base_url('assets') ;?>/perfect-learn/js/jquery.min.js"></script>
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -42,7 +42,7 @@
 
 
     <!-- ALL JS FILES -->
-    <script src="<?= base_url('assets') ;?>/perfect-learn/js/jquery.min.js"></script>
+  
 	<script src="<?= base_url('assets') ;?>/perfect-learn/js/popper.min.js"></script>
     <script src="<?= base_url('assets') ;?>/perfect-learn/js/bootstrap.min.js"></script>
     <!-- ALL PLUGINS -->

@@ -1,4 +1,6 @@
-<?php namespace Config;
+<?php
+
+namespace Config;
 
 class Validation
 {
@@ -17,6 +19,7 @@ class Validation
 		\CodeIgniter\Validation\FormatRules::class,
 		\CodeIgniter\Validation\FileRules::class,
 		\CodeIgniter\Validation\CreditCardRules::class,
+		\Myth\Auth\Authentication\Passwords\ValidationRules::class,
 	];
 
 	/**
@@ -95,7 +98,10 @@ class Validation
 		'ipk' => [
 			'rules' => 'required|max_length[4]',
 		],
-		'lamastudy' => [
+		'mulaistudy' => [
+			'rules' => 'required|max_length[20]'
+		],
+		'akhirstudy' => [
 			'rules' => 'required|max_length[20]'
 		],
 		'waktutunggu' => [
@@ -114,7 +120,7 @@ class Validation
 			'rules' => 'required'
 		],
 	];
-	public $kepuasan =[
+	public $kepuasan = [
 		'statuskerja' => [
 			'rules' => 'required'
 		],
@@ -200,8 +206,10 @@ class Validation
 		],
 	];
 	public $foto = [
-		'cv' => 'max_size[cv,500]|ext_in[cv,pdf]',
 		'gambar' => 'max_size[gambar,500]|ext_in[gambar,png,jpg,jpeg]'
+	];
+	public $cv = [
+		'cv' => 'max_size[cv,500]|ext_in[cv,pdf]'
 	];
 
 
@@ -283,7 +291,7 @@ class Validation
 		],
 		'manfaatstudiprestis' => [
 			'required' => '{field} Harus diisi'
-		],	
+		],
 		'manfaatstudikepercayaandiri' => [
 			'required' => '{field} Harus diisi'
 		],
@@ -298,7 +306,7 @@ class Validation
 		],
 		'manfaatstudidalammengikutiipteks' => [
 			'required' => '{field} Harus diisi'
-		],	
+		],
 		'kebutuhanpengetahuanmahasiswa' => [
 			'required' => '{field} Harus diisi'
 		],
@@ -324,18 +332,20 @@ class Validation
 		],
 	];
 	public $foto_errors = [
+		'gambar' => [
+			'max_size' => 'size gambar terlalu besar, maksimum 500 kb',
+			'ext_in' => 'file yang kamu pilih bukan gambar',
+		],
+	];
+	public $cv_errors = [
 		'cv' => [
 			'max_size' => 'size terlalu besar, maksimum 500 kb',
 			'ext_in' => 'file harus pdf',
 		],
-		'gambar' => [
-			'max_size' => 'size gambar terlalu besar, maksimum 500 kb',
-			'ext_in' => 'file yang kamu pilih bukan gambar',
-		]
 	];
 
 
 
-	
+
 	//--------------------------------------------------------------------
 }

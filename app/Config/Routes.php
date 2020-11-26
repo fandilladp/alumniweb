@@ -30,7 +30,14 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+helper('auth');
 $routes->get('/', 'Home::index');
+if(!logged_in()){
+	$routes->get('alumni', 'Home::index');
+	$routes->get('tracer', 'Home::index');
+	$routes->get('user', 'Home::index');
+}
+
 
 /**
  * --------------------------------------------------------------------

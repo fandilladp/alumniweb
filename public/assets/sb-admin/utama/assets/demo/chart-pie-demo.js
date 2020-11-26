@@ -3,7 +3,7 @@ Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSyste
 Chart.defaults.global.defaultFontColor = '#292b2c';
 
 setTimeout(() => {
-  let url = "http://localhost/alumniweb/algoritma/refresh";
+  let url = "http://localhost:8080/algoritma/refresh";
 $.ajax({
     url: url,
     async: false,
@@ -11,7 +11,7 @@ $.ajax({
 }, 500);
 setTimeout(() => {
   
-  let url = "http://localhost/alumniweb/algoritma/fetch";
+  let url = "http://localhost:8080/algoritma/fetch";
   $.ajax({
       url: url,
       async: false,
@@ -20,11 +20,13 @@ setTimeout(() => {
           data1 = data.kepuasan;
           data2 = data.bekerja;
           data3 = data.hubungandenganprodi;
+          data4 = data.bidangpekerjaan;
   }});
-  
+  let bidangpekerjaan = JSON.parse(data4);
   let sisakepuasan = 100 - data1;
   let sisabekerja = 100 - data2;
   let sisahubungan = 100 - data3;
+
   
   // Pie Chart Example
   var ctx = document.getElementById("kepuasanprodi");
@@ -63,6 +65,15 @@ setTimeout(() => {
       }],
     },
   });
+  var ctx = document.getElementById("bidangkerja");
+  var myPieChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ["Dosen", "Software Developer", "Freelance"],
+      datasets: [{
+        data: [bidangpekerjaan.dosen, bidangpekerjaan.softwareDevelopment, bidangpekerjaan.freelance],
+        backgroundColor: ['#007bff', ' #fd7e14', ' #28a74'],
+      }],
+    },
+  });
 }, 1000);
-
-

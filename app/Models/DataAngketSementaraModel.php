@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class DataAngketModel extends Model
+class DataAngketSementaraModel extends Model
 {
     protected $table = 'data_angket';
     protected $primaryKey = 'id';

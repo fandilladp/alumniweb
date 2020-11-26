@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Dashboard - SB Admin</title>
+    <title>Dashboard Admin</title>
     <link href="<?= base_url('assets'); ?>/sb-admin/utama/css/styles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
@@ -15,13 +15,44 @@
 
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">Dashboard Admin</a>
+        <a class="navbar-brand" href="#">Dashboard Admin</a>
         <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
         <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
         </form>
         <!-- Navbar-->
         <ul class="navbar-nav ml-auto ml-md-0">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-users-cog"></i></a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                    <div class="dropdown-divider"></div>
+                    <table class="table table-responsive table-hover table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Created</th>
+                                <th scope="col">Aktivasi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($aktivasi as $data) : ?>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td><?= $data->username; ?></td>
+                                    <td><?= $data->NIM; ?></td>
+                                    <td><?= $data->created_at; ?></td>
+                                    <td>
+                                        <a class="btn btn-danger" href="" data-toggle="modal" data-whatever="<?= base_url('user/aktivasi/' . $data->id) ?>" data-target="#add"> <i class="fas fa-user-plus"></i></a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
@@ -76,7 +107,7 @@
                             </div>
                             Perusahaan
                         </a>
-                        <div class="sb-sidenav-menu-heading">Addons</div>
+                        <!-- <div class="sb-sidenav-menu-heading">Addons</div>
                         <a class="nav-link" href="charts.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Charts
@@ -84,7 +115,7 @@
                         <a class="nav-link" href="tables.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                             Tables
-                        </a>
+                        </a> -->
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
@@ -125,55 +156,64 @@
                                 <div class="card-body"><canvas id="kepuasanprodi" width="100%" height="50"></canvas></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card mb-4">
-                        <div class="card-header">
-                            <i class="fas fa-table mr-1"></i>
-                            Data Alumni Teknik Elektro
+                        <div class="col-lg-4">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-briefcase"></i> Bidang Pekerjaan Alumni
+                                </div>
+                                <div class="card-body"><canvas id="bidangkerja" width="100%" height="50"></canvas>
+                                    <button data-toggle="modal" data-target="#bidang" class="btn-primary rounded"><i class="fas fa-marker"></i></button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>NIM</th>
-                                            <th>Bekerja di</th>
-                                            <th>Jabatan</th>
-                                            <th>Alamat</th>
-                                            <th>Kontak</th>
-                                            <th>Hapus</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>NIM</th>
-                                            <th>Bekerja di</th>
-                                            <th>Jabatan</th>
-                                            <th>Alamat</th>
-                                            <th>Kontak</th>
-                                            <th>Hapus</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <?php foreach ($all as $dataalumni) : ?>
+                        <div class="card w-100 mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table mr-1"></i>
+                                Data Alumni Teknik Elektro
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-hover table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
                                             <tr>
-                                                <td><?= $dataalumni->namaalumni; ?></td>
-                                                <td><?= $dataalumni->nim; ?></td>
-                                                <td><?= $dataalumni->pekerjaan; ?></td>
-                                                <td><?= $dataalumni->jabatan; ?></td>
-                                                <td><?= $dataalumni->alamat; ?></td>
-                                                <td><?= $dataalumni->nomorhp; ?></td>
-                                                <td><a class="btn btn-outline-danger" href="" data-toggle="modal" data-whatever="<?= base_url('user/delete/' . $dataalumni->id) ?>" data-target="#deleteModal"><i class="fas fa-trash-alt"></i></a></td>
+                                                <th>Name</th>
+                                                <th>NIM</th>
+                                                <th>Bekerja di</th>
+                                                <th>Jabatan</th>
+                                                <th>Alamat</th>
+                                                <th>Kontak</th>
+                                                <th>Hapus</th>
                                             </tr>
-                                        <?php endforeach ?>
-                                    </tbody>
-                                </table>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>NIM</th>
+                                                <th>Bekerja di</th>
+                                                <th>Jabatan</th>
+                                                <th>Alamat</th>
+                                                <th>Kontak</th>
+                                                <th>Hapus</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            <?php foreach ($all as $dataalumni) : ?>
+                                                <tr>
+                                                    <td><?= $dataalumni->namaalumni; ?></td>
+                                                    <td><?= $dataalumni->nim; ?></td>
+                                                    <td><?= $dataalumni->pekerjaan; ?></td>
+                                                    <td><?= $dataalumni->jabatan; ?></td>
+                                                    <td><?= $dataalumni->alamat; ?></td>
+                                                    <td><?= $dataalumni->nomorhp; ?></td>
+                                                    <td><a class="btn btn-outline-danger" href="" data-toggle="modal" data-whatever="<?= base_url('user/delete/' . $dataalumni->id) ?>" data-target="#deleteModal"><i class="fas fa-trash-alt"></i></a></td>
+                                                </tr>
+                                            <?php endforeach ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
             </main>
             <!-- modal delete -->
             <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -189,6 +229,25 @@
                         <div class="modal-footer">
                             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                             <a id="delete" class="btn btn-danger" href="">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end modal -->
+            <!-- modal add -->
+            <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Aktivasi User</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Pilih "Aktivasi" jika ingin mengeaktivasi user ini menjadi alumni.</div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                            <a id="add" class="btn btn-danger" href="">Aktivasi</a>
                         </div>
                     </div>
                 </div>
@@ -228,10 +287,58 @@
             modal.find('#delete').attr('href', recipient)
 
         })
+        $('#add').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var recipient = button.data('whatever') // Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+            modal.find('#add').attr('href', recipient)
+
+        })
     </script>
 </body>
 
 </html>
+<!-- modal bidang -->
+<div class="modal fade" id="bidang" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update Pie Chart</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <?= form_open('User/updatetracer'); ?>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button type="button" class="btn btn-outline-secondary">Dosen</button>
+                    </div>
+                    <input type="text" name="dosen" class="form-control" aria-label="">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button type="button" class="btn btn-outline-secondary">Software Developer</button>
+                    </div>
+                    <input type="text" name="softwaredeveloper" class="form-control" aria-label="">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button type="button" class="btn btn-outline-secondary">Freelance</button>
+                    </div>
+                    <input type="text" name="freelance" class="form-control" aria-label="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Update Data</button>
+                </div>
+                <?= form_close() ?>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Logout Modal-->
 <div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -246,7 +353,7 @@
             <div class="modal-body">Select "Logout" below if you are ready to Logout.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a id="delete" class="btn btn-danger" href="<?= base_url('auth/logout') ;?>">logout</a>
+                <a id="logout" class="btn btn-danger" href="<?= base_url('logout'); ?>">logout</a>
             </div>
         </div>
     </div>

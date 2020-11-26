@@ -6,10 +6,10 @@ use CodeIgniter\Model;
 
 class UserModel extends Model
 {
-    protected $table = 'user';
+    protected $table = 'users';
     protected $primaryKey = 'id';
     protected $allowedFields = [
-        'username', 'email', 'avatar', 'password', 'salt', 'role', 'aktif', 'created_date', 'updated_date'
+        'status'
     ];
     protected $returnType = 'App\Entities\User';
     protected $useTimestamps = false;

@@ -1,3 +1,6 @@
+<?php 
+helper('auth');
+?>
 <?= $this->extend('layout/templatehome'); ?>
 
 <?= $this->section('isicontent'); ?>
@@ -11,14 +14,16 @@
                 <tbody>
                     <?php for ($i = 0; $i < $jumlah; $i++) : ?>
                         <tr>
-                            
+
                             <td width="20%"><img width="100%" height="100%" class="rounded img-thumbnail" src="<?= base_url('uploads/' . $avatar[$i]) ?>" alt=""></td>
                             <td>
                                 <h4><?= $namaalumni[$i]; ?></h4>
                                 <hr>
                                 <p><?= $deskripsi[$i]; ?></p>
                             </td>
-                            <td><a href="<?= base_url('alumni/view/'. $id[$i]) ;?>"><button class="mt-5">view</button></a></td>
+                            <?php if (user()->status != 'tamu') : ?>
+                                <td><a href="<?= base_url('alumni/view/' . $id[$i]); ?>"><button class="mt-5 btn btn-outline-warning align-bottom">view</button></a></td>
+                            <?php endif ?>
                         </tr>
                     <?php endfor; ?>
                 </tbody>

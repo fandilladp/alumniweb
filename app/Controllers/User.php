@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\DataAngketModel;
 use CodeIgniter\Database\BaseResult;
 
 class User extends BaseController
@@ -9,58 +10,89 @@ class User extends BaseController
     public function __construct()
     {
         helper('form');
+        helper('auth');
+        $this->uploadcv = new DataAngketModel();
         $this->validation = \Config\Services::validation();
         $this->session = session();
     }
     public function index()
     {
-        if ($this->session->get('isLoggedIn')) {
-            $userModel = new \App\Models\UserModel();
+        if (logged_in()) {
+            // $userModel = new \App\Models\UserModel();
             $dataalumni = new \App\Models\DataAngketModel();
-            $username = $this->session = session('username');
-            $myuser = $userModel->where('username', $username)->first();
-            $id = $myuser->id;
-            $alumni = $dataalumni->where('id', $id)->first();
+            $aktivasi = new \App\Models\UserModel();
+            // $username = $this->session = session('username');
+            // $myuser = $userModel->where('username', $username)->first();
+            // $id = $myuser->id;
+            $alumni = $dataalumni->where('id', user_id())->first();
 
-            if ($myuser->role == 1) {
+            // if (user()->status == 'alumni') {
+
+            //     if (!$alumni == null) {
+            //         $status = 'on';
+            //     }else{
+            //         $status = 'off';
+            //     }
+            //     return view('user/alumni', [
+            //         'status' => $status,
+            //         'alumni' => $alumni,
+            //         'myuser' => $myuser,
+            //     ]);
+            // } elseif ($myuser->role == 2) {
+            //     $all = $dataalumni->findAll();
+            //     return view('user/admin', [
+            //         'all' => $all,
+            //     ]);
+            // }
+            if (user()->status == 'alumni') {
+                if (!$alumni == null) {
+                    if (!$alumni->saransistemalumni == null) {
+                        $status = 'on';
+                    }else {
+                        $status = 'off';
+                    }
+                } else {
+                    $status = 'off';
+                }
                 return view('user/alumni', [
+                    'status' => $status,
                     'alumni' => $alumni,
-                    'myuser' => $myuser,
+                    'myuser' => user(),
                 ]);
-            } elseif ($myuser->role == 2) {
+            } elseif (user()->status == 'admin') {
+               
+                $aktivasi = $aktivasi->where('status', 'tamu')->findAll();
                 $all = $dataalumni->findAll();
                 return view('user/admin', [
                     'all' => $all,
+                    'aktivasi' => $aktivasi
                 ]);
             }
         }
-        return redirect()->to(site_url('auth/login'));
+        return redirect()->to(site_url('login'));
     }
 
     public function cv()
     {
         $id = $this->request->uri->getSegment(3);
-
-        $dataalumni = new \App\Models\DataAngketModel();
-
-        $dataalumni->find($id);
-
         if ($this->request->getPost()) {
-            $data = $this->request->getPost('cv');
-            $this->validation->run($data, 'foto');
+            $validasi = $this->request->getPost('cv');
+            $this->validation->run($validasi, 'cv');
 
             $errors = $this->validation->getErrors('cv');
 
             if (!$errors) {
-                $b = new \App\Entities\Resume();
-                $b->id = $id;
-                $b->fill($data);
-                $b->gambar = $this->request->getFile('cv');
 
-                $b->updated_date = date("Y-m-d H:i:s");
+                $upload = $this->request->getFile('cv');
+                $cv = $upload->getRandomName();
+                $data = [
+                    'id' => $id,
+                    'cv' => $cv,
+                    'updated_date' => date("Y-m-d H:i:s")
+                ];
+                $this->uploadcv->updateData($data, $id);
+                $upload->move(ROOTPATH . 'public/cv', $cv);
 
-
-                $dataalumni->update($id, $b);
                 return redirect()->to(site_url('user/index'));
             } else {
                 $this->session->setFlashdata('errors', $errors);
@@ -91,7 +123,9 @@ class User extends BaseController
                 $b->fill($data);
                 $b->namaalumni = $this->request->getPost('namaalumni');
                 $b->deskripsi  = $this->request->getPost('deskripsi');
-                $b->gambar = $this->request->getFile('gambar');
+                if ($this->request->getFile('gambar')->isValid()) {
+                    $b->gambar = $this->request->getFile('gambar');
+                }
 
                 $b->updated_date = date("Y-m-d H:i:s");
 
@@ -107,12 +141,39 @@ class User extends BaseController
     }
 
     //--------------------------------------------------------------------
+    public function aktivasi()
+    {
+        $id = $this->request->uri->getSegment(3);
+
+        $user = new \App\Models\UserModel();
+        $data = [
+            'status' => 'alumni'
+        ];
+        $user->update($id, $data);
+        return redirect()->to(site_url('user/index'));
+    }
     public function delete()
     {
         $id = $this->request->uri->getSegment(3);
 
         $user = new \App\Models\DataAngketModel();
         $user->delete($id);
+
+        return redirect()->to(site_url('user/index'));
+    }
+    public function updatetracer()
+    {
+        $tracerModel = new \App\Models\TracerStudyModel();
+        $id = 2020;
+        $dosen = $this->request->getPost('dosen');
+        $softwareDeveloper = $this->request->getPost('softwaredeveloper');
+        $freelance = $this->request->getPost('freelance');
+        $datajson = array("dosen"=>$dosen, "softwareDevelopment"=>$softwareDeveloper, "freelance"=>$freelance);
+        $json = json_encode($datajson);
+        $data = [
+            'bidangpekerjaan' => $json
+        ];
+        $tracerModel->update($id, $data);
 
         return redirect()->to(site_url('user/index'));
     }

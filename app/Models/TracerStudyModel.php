@@ -9,7 +9,7 @@ class TracerStudyModel extends Model
     protected $table = 'tracer_study';
     protected $primaryKey = 'id';
     protected $allowedFields = [
-       'kepuasan', 'bekerja', 'hubungandenganprodi'
+       'kepuasan', 'bekerja', 'hubungandenganprodi', 'bidangpekerjaan'
     ];
     protected $returnType = 'App\Entities\TracerStudy';
     protected $useTimestamps = false;
